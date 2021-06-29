@@ -1,5 +1,5 @@
 import React from 'react'
-import Table, { SelectColumnFilter } from './Table'  // new
+import Table, { AvatarCell, SelectColumnFilter, StatusPill } from './Table'  // new
 
 const getData = () => {
   const data = [
@@ -18,7 +18,7 @@ const getData = () => {
       email: 'cody.fisher@example.com',
       title: 'Product Directives Officer',
       department: 'Intranet',
-      status: 'Active',
+      status: 'Inactive',
       role: 'Owner',
       age: 43,
       imgUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
@@ -38,7 +38,7 @@ const getData = () => {
       email: 'jenny.wilson@example.com',
       title: 'Central Security Manager',
       department: 'Program',
-      status: 'Active',
+      status: 'Offline',
       role: 'Member',
       age: 29,
       imgUrl: 'https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
@@ -48,7 +48,7 @@ const getData = () => {
       email: 'kristin.watson@example.com',
       title: 'Lean Implementation Liaison',
       department: 'Mobility',
-      status: 'Active',
+      status: 'Inactive',
       role: 'Admin',
       age: 36,
       imgUrl: 'https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
@@ -73,6 +73,9 @@ function App() {
     {
       Header: "Name",
       accessor: 'name',
+      Cell: AvatarCell,
+      imgAccessor: "imgUrl",
+      emailAccessor: "email",
     },
     {
       Header: "Title",
@@ -81,6 +84,7 @@ function App() {
     {
       Header: "Status",
       accessor: 'status',
+      Cell: StatusPill,
     },
     {
       Header: "Age",
@@ -97,12 +101,16 @@ function App() {
   const data = React.useMemo(() => getData(), [])
 
   return (
-    <>
-      <h1>Hello React!</h1>
-      <div>
-        <Table columns={columns} data={data} />
-      </div>
-    </>
+    <div className="min-h-screen bg-gray-100 text-gray-900">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="">
+          <h1 className="text-xl font-semibold">React Table + Tailwind CSS = ❤</h1>
+        </div>
+        <div className="mt-6">
+          <Table columns={columns} data={data} />
+        </div>
+      </main>
+    </div>
   );
 }
 
