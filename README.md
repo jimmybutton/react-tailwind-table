@@ -4,8 +4,8 @@ Source code for my tutorial on how to build customizable table component with Re
 
 Both parts of the tutorial can be found on my [blog](https://www.samuelliedtke.com/):
 
-[Part 1](https://www.samuelliedtke.com/blog/react-table-tutorial-part-1/): Build a fully featured table component step by step 
-[Part 2](https://www.samuelliedtke.com/blog/react-table-tutorial-part-2/): Style the table with Tailwind CSS 
+- [Part 1](https://www.samuelliedtke.com/blog/react-table-tutorial-part-1/): Build a fully featured table component step by step 
+- [Part 2](https://www.samuelliedtke.com/blog/react-table-tutorial-part-2/): Style the table with Tailwind CSS 
 
 Here is how the table component looks like:
 
